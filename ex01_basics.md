@@ -2,7 +2,30 @@
 
 ### Запрос №1 (Прямая инструкция)
 **Мой промпт:** Объясни, что делает эта функция на Go, шаг за шагом:
-[Вставлен код функции Fibonacci]
+```go
+package main
+
+import "fmt"
+
+func Fibonacci(index int) int {
+	if index < 0 {
+		return -1
+	}
+	if index == 0 {
+		return 0
+	}
+	if index == 1 {
+		return 1
+	}
+	return Fibonacci(index-1) + Fibonacci(index-2)
+}
+
+func main() {
+	arg1 := 4
+	fmt.Println(Fibonacci(arg1))
+}
+
+```
 
 **Ответ GPT:**
 Эта функция вычисляет число Фибоначчи по указанному индексу с помощью рекурсии. Разберем его по шагам.
@@ -16,7 +39,30 @@
 
 ### Запрос №2 (Открытый вопрос)
 **Мой промпт:** Что может пойти не так с этой функцией на Go?
-[Вставлен код функции Fibonacci]
+```go
+package main
+
+import "fmt"
+
+func Fibonacci(index int) int {
+	if index < 0 {
+		return -1
+	}
+	if index == 0 {
+		return 0
+	}
+	if index == 1 {
+		return 1
+	}
+	return Fibonacci(index-1) + Fibonacci(index-2)
+}
+
+func main() {
+	arg1 := 4
+	fmt.Println(Fibonacci(arg1))
+}
+
+```
 
 **Ответ GPT:**
 На первый взгляд функция правильная, но у нее есть несколько серьезных недостатков:
